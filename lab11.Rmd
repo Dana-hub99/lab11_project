@@ -1,4 +1,6 @@
 ---
-title: "R Notebook"
-output: html_document
+title: "Lab 11"
+author: "Dana Lee"
+date: "`r Sys.Date()`"
+output: flexdashboard::flex_dashboard
 ---
