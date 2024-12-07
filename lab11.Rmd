@@ -21,6 +21,16 @@ Column
 ### Component 1
 
 ```{r}
+p1 <- pokemon %>%
+  ggplot() +
+  geom_boxplot(
+    aes(x = reorder(`Type 1`, Total, FUN=median), y = Total, fill = `Type 1`)) +
+  theme(axis.text.x = element_text(angle = 45)) +
+ labs(
+    x = "Pokemon Defenses",
+    y = "Pokemon Attacks"
+    )
+ggplotly(p1)
 ```
 
 Column
