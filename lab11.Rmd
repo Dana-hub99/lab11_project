@@ -29,4 +29,14 @@ Column
 ### Component 2
 
 ```{r}
+p2 <- pokemon %>%
+  ggplot() + 
+  geom_point(mapping = aes(x = Defense, y = Attack, color = `Type 1`)) +
+  theme(axis.text.x = element_text(angle = 45)) +
+  labs(
+    x = "Pokemon Defenses",
+    y = "Pokemin Attacks",
+    title = "Scatter Plot Showing the Attacks and Defneses of Pokemons"
+    )
+ggplotly(p2)
 ```
