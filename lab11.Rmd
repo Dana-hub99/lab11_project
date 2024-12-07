@@ -4,3 +4,22 @@ author: "Dana Lee"
 date: "`r Sys.Date()`"
 output: flexdashboard::flex_dashboard
 ---
+
+SidebarName {.sidebar}
+----------------------
+
+Column
+-------------------------------------
+
+### Component 1
+
+```{r}
+```
+
+Column
+-------------------------------------
+
+### Component 2
+
+```{r}
+```
