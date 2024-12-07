@@ -10,10 +10,14 @@ library(tidyverse)
 library(plotly)
 library(crosstalk)
 pokemon <- read_csv("pokemon.csv")
+shared_pokemon <- SharedData$new(pokemon)
 ```
 
 SidebarName {.sidebar}
 ----------------------
+```{r}
+filter_select("poke_type", "Pokemon Type", shared_pokemon, ~`Type 1`)
+```
 
 Column
 -------------------------------------
@@ -21,7 +25,7 @@ Column
 ### Component 1
 
 ```{r}
-p1 <- pokemon %>%
+p1 <- shared_pokemon %>%
   ggplot() +
   geom_boxplot(
     aes(x = reorder(`Type 1`, Total, FUN=median), y = Total, fill = `Type 1`)) +
@@ -39,7 +43,7 @@ Column
 ### Component 2
 
 ```{r}
-p2 <- pokemon %>%
+p2 <- shared_pokemon %>%
   ggplot() + 
   geom_point(mapping = aes(x = Defense, y = Attack, color = `Type 1`)) +
   theme(axis.text.x = element_text(angle = 45)) +
